@@ -8,7 +8,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       textContent: 'Something is happening...',
+      url: 'https://my-worker.linqinyun.workers.dev/',
     };
+    this.GetRequest();
 
     this.PostRequest = this.PostRequest.bind(this);
     this.GetRequest = this.GetRequest.bind(this);
@@ -16,7 +18,7 @@ class App extends React.Component {
 
   PostRequest(){
     var httpRequest = new XMLHttpRequest();
-    httpRequest.open('POST', 'http://127.0.0.1:8787', true);
+    httpRequest.open('POST', this.state.url, true);
     httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     var user_name = document.getElementById('user_name').value;
@@ -34,7 +36,7 @@ class App extends React.Component {
   
   GetRequest(){
     var httpRequest = new XMLHttpRequest();
-    httpRequest.open('GET', 'http://127.0.0.1:8787', true);
+    httpRequest.open('GET', this.state.url, true);
     httpRequest.send();
   
     let json = '';
