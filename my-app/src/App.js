@@ -62,10 +62,10 @@ class App extends React.Component {
           <div className="Message">
             <box className="box">
               <p>Post your life</p>
-              <textarea id='user_name' className="user-name" defaultValue="What's the name you want to use today?">
+              <textarea id='user_name' className="user-name" placeholder="What's the name you want to use today?">
               </textarea>
               <p></p>
-              <textarea id='user_post' className="textarea" defaultValue='Say something...'>
+              <textarea id='user_post' className="textarea" placeholder='Say something...'>
               </textarea>
               <p></p>
               <button className="post-btn" onClick={this.PostRequest}>
